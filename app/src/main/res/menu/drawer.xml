@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/about"
+            android:checkable="false"
+            android:icon="@drawable/key_full"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/rateUs"
+            android:checkable="false"
+            android:icon="@drawable/rating"
+            android:title="@string/rate_us" />
+        <item
+            android:id="@+id/passwords"
+            android:checked="true"
+            android:icon="@drawable/password"
+            android:title="Passwords" />
+
+        <item
+            android:id="@+id/faq"
+            android:checked="true"
+            android:icon="@drawable/faq"
+            android:title="FAQ's" />
+        <item
+            android:id="@+id/share"
+            android:checked="true"
+            android:icon="@drawable/share"
+            android:title="Share" />
+    </group>
+</menu>

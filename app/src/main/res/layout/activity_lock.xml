@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.upload.UploadActivity">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.twowaits.password.kuncika.ui.lock.LockViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/clRootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:id="@+id/activityMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="5dp">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        style="@style/Toolbar"
+                        app:subtitleTextColor="@color/white"
+                        app:titleTextAppearance="@style/TextAppearance.Text.Regular"
+                        app:titleTextColor="@color/white" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/password_container"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_margin="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/app_icon"
+                            app:iconUrl="@{viewModel.appIcon}"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+
+                        <TextView
+                            android:id="@+id/app_title"
+                            android:text="@{viewModel.appTitle}"
+                            android:textSize="24sp"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="5dp"
+                            style="@style/TextAppearance.Text.Regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/passcode_container"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:inputType="numberPassword"
+                            android:maxLength="4"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:id="@+id/password"
+                            style="@style/TextAppearance.Text.Regular"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/submit"
+                            android:layout_marginTop="5dp"
+                            android:paddingBottom="3dp"
+                            style="@style/TextAppearance.Text.Regular"
+                            android:paddingTop="3dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:background="@color/colorPrimary"
+                            android:textColor="@color/white"
+                            android:text="Submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pattern_container"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.andrognito.patternlockview.PatternLockView
+                            android:id="@+id/pattern_lock_view"
+                            android:layout_width="280dp"
+                            android:layout_height="280dp"
+                            app:dotCount="3"
+                            app:dotNormalSize="12dp"
+                            app:dotSelectedSize="24dp"
+                            app:pathWidth="4dp"
+                            app:aspectRatioEnabled="true"
+                            app:aspectRatio="square"
+                            app:normalStateColor="@color/white"
+                            app:correctStateColor="@color/white"
+                            app:wrongStateColor="@color/pomegranate"
+                            app:dotAnimationDuration="200"
+                            app:pathEndAnimationDuration="100"  />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</layout>
